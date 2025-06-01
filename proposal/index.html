@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project Proposal</title>
+    <meta name="author" content="Corry McConnell Palmer">
+    <meta name="description" content="Proposal for final project">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQIW2NgAAIAAAUAAR4f7BQAAAAASUVORK5CYII=">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cousine:ital@0;1&family=Lora:ital@0;1&display=swap">
+
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <div id="content">
+        <header>
+            <h1>WDD330 Final Project Proposal</h1>
+            <h2>by Corry McConnell Palmer</h2>
+        </header>
+        <main>
+            <section>
+                <h2>Overview</h2>
+                <h3><q>A brief description of the project.</q></h3>
+                <p>The project will be Chess against the Stockfish chess engine.</p>
+                <p>It will also feature board analysis from Lichess.</p>
+
+                <h3><q>What is the problem you are trying to solve?</q></h3>
+                <p>There is not really an "problem" I am solving. It's just Chess against a robot.</p>
+
+                <h3><q>What is your motivation to work on this?</q></h3>
+                <p>I have been a fan of Chess for a long time, (though I am not particularly good at it).</p>
+                <p>For every final project I have had thus far, I wished I had been able to do Chess, and this time I believe that I can pull it off.</p>
+            </section>
+
+            <section>
+                <h2>Target Audience</h2>
+                <h3><q>Who is the target audience for the application? Who will it serve?</q></h3>
+                <p>It is targeted at people that want to play Chess, and more specifically people that want to get better at it.</p>
+            </section>
+
+            <section>
+                <h2>Major Functions</h2>
+                <dl>
+                    <dt>setupBoard()</dt>
+                    <dd>Builds the game board and places all pieces in their proper starting positions.</dd>
+
+                    <dt>getAiMove()</dt>
+                    <dd>Fetches the API response on where the opponent should move. Sends the current board state using FEN notation.</dd>
+
+                    <dt>getBoardAnalysis()</dt>
+                    <dd>Fetches board analysis API response from Lichess.</dd>
+
+                    <dt>buildFenString()</dt>
+                    <dd>Takes the current board state and converts it into a valid FEN string to send to the APIs.</dd>
+
+                    <dt>clickSpace()</dt>
+                    <dd>Called when a space is clicked. Gathers information to send to other functions, such as: which space was clicked, what piece is in it, what color the piece is, and whether the piece has moved (important for pawns, rooks, and kings).</dd>
+
+                    <dt>showMoves()</dt>
+                    <dd>Highlights valid spaces to move to, including when kings are in check, and does nothing if there are no valid moves from said space.</dd>
+
+                    <dt>[pawn|knight|bishop|queen|king]Move()</dt>
+                    <dd>Called by showMoves. Gets valid moves for the piece type given the current board state.</dd>
+
+                    <dt>makeMove()</dt>
+                    <dd>Actually makes the move happen. Updates where the selected piece is located and captures pieces as needed.</dd>
+
+                    <dt>updateHistory()</dt>
+                    <dd>Adds new lines to the move history display by calling buildFenString.</dd>
+                </dl>
+            </section>
+
+            <section>
+                <h2>Wireframes</h2>
+                <h3>Mobile view</h3>
+                <img src="/images/mobile-wireframe.png" alt="Mobile view">
+                <h3>Desktop view</h3>
+                <img src="/images/desktop-wireframe.png" alt="Desktop view">
+            </section>
+
+            <section>
+                <h2>External Data</h2>
+                <h3><q>What external API data source(s) will you use?</q></h3>
+                <dl>
+                    <dt>chess-api.com/</dt>
+                    <dd>Chess engine for opponent</dd>
+
+                    <dt>lichess.org/api</dt>
+                    <dd>Board analysis for player</dd>
+                </dl>
+
+                <h3><q>What data will you need to store?</q></h3>
+                <p>I believe it would be reasonable to store the current game in progress in localStorage. Chess games can go on for a while, and it would be most unfortunate if someone were to loose power and need to start over.</p>
+            </section>
+
+            <section>
+                <h2>Module List</h2>
+                <ul>
+                    <li><code>Game.mjs</code> - for general game logic, such as keeping track of turns and updating the history</li>
+                    <li><code>Board.mjs</code> - for board based logic such as where everything is and what piece is what</li>
+                    <li><code>Piece.mjs</code> - would be a piece class holding all the relevant data for said piece</li>
+                    <li><code>Move.mjs</code> - for determining valid moves</li>
+                    <li><code>API.mjs</code> - for interacting with the APIs</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Graphic Identity</h2>
+                
+                <section>
+                    <h3>Color Scheme</h3>
+                    <dl>
+                        <dt>Primary</dt>
+                        <dd class="color tan">Tan</dd>
+                        <dd class="color dgreen">Dark Green</dd>
+                        <dd class="color mgreen">Medium Green</dd>
+                        <dd class="color lgreen">Light Green</dd>
+
+                        <dt>Secondary</dt>
+                        <dd class="color yellow">Bright Yellow</dd>
+                        <dd class="color offwhite">Off-white</dd>
+                        <dd class="color offblack">Off-black</dd>
+                        
+                        <dt>Utility</dt>
+                        <dd class="color red">Red</dd>
+                        <dd class="color black">Black</dd>
+                        <dd class="color white">White</dd>
+                    </dl>
+                </section>
+                
+                <section>
+                    <h3>Typography</h3>
+                    <dl>
+                        <dt class="lora">Headings</dt>
+                        <dd class="lora">Lora</dd>
+                        
+                        <dt class="cousine">Everything Else</dt>
+                        <dd class="cousine">Cousine</dd>
+                    </dl>
+                </section>
+                
+                <section>
+                    <h3>Icon</h3>
+                    <p>The icon will be an angled square seperated into four quadrants in a black and white Chessboard pattern. It will have a simple King icon in the center.</p>
+                    <p>Here is a rough sketch:</p>
+                    <img src="/images/icon-sketch.png" alt="rough sketch of icon">
+                </section>
+            </section>
+
+            <section>
+                <h2>Timeline</h2>
+                <p>Refer to the Trello below for the timeline</p>
+            </section>
+            
+            <section>
+                <h2>Project Planning</h2>
+                <p>Refer to the <a href="https://trello.com/invite/b/681980a74dc547ea38474d3c/ATTIb02f9bc75e34aaee666a2e8983d32b7eC59CF23C/wdd330-final-project" title="Trell">Trello</a>. (I think the link adds you as a member? I'm not sure how that works)</p>
+            </section>
+
+            <section>
+                <h2>Challenges</h2>
+                <h3><q>What do you anticipate being the biggest challenges in building this application?</q></h3>
+                <p>Scope creep. I am constantly struggling with it in all my projects. Things like "Wouldn't it be cool if...", "I should add...", "And it could..." are the bane of my existence and I expect I will have MANY issues with them in a project I am so invested in.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy;2025 | Corry McConnell Palmer</p>
+        </footer>
+    </div>
+</body>
+
+</html>

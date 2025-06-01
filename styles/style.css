@@ -1,0 +1,169 @@
+* {
+    border: none;
+    box-sizing: border-box;
+    color: inherit;
+    font-family: inherit;
+    word-wrap: break-word;
+}
+
+:root {
+    --black: rgb(0, 0, 0);
+    --white: rgb(255, 255, 255);
+    --off-black: rgb(16, 16, 16);
+    --off-white: rgb(239, 239, 239);
+    --red: rgb(155, 0, 0);
+    --bright-yellow: rgb(255, 255, 175);
+    --tan: rgb(245, 245, 220);
+    --light-green: rgb(127, 159, 155);
+    --medium-green: rgb(80, 143, 145);
+    --dark-green: rgb(13, 88, 97);
+}
+
+html {
+    background-color: var(--medium-green);
+    color: var(--black);
+    font-family: "Cousine", monospace;
+}
+
+body {
+    margin: 0;
+}
+
+#content {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+h2,
+h3,
+h4 {
+    font-family: "Lora", serif;
+    padding: 0.25em;
+}
+
+header {
+    background-color: var(--dark-green);
+    text-align: center;
+}
+
+header h1, 
+header h2 {
+    color: var(--off-white);
+    font-family: "Lora", serif;
+    margin: auto 0.25em;
+}
+
+main {
+    background-color: var(--tan);
+    padding: 4px 2px;
+}
+
+section {
+    background-color: var(--off-white);
+    box-shadow: 4px 0 8px var(--off-black), -4px 0 8px var(--off-black);
+    border-radius: .33em;
+    margin: .66em;
+    padding: .33em;
+}
+
+section section {
+    padding: 4px;
+    margin: .33em;
+    box-shadow: none;
+    border: 1px solid var(--off-black);
+}
+
+p {
+    margin: .33em auto;
+    width: 90%;
+}
+
+footer {
+    background-color: var(--dark-green);
+    color: var(--off-white);
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.color {
+    border: 1px solid;
+    padding: 1em;
+}
+
+.tan {
+    background-color: var(--tan);
+    color: #000;
+}
+
+.dgreen {
+    background-color: var(--dark-green);
+    color: #fff;
+}
+
+.mgreen {
+    background-color: var(--medium-green);
+    color: #000;
+}
+
+.lgreen {
+    background-color: var(--light-green);
+    color: #000;
+}
+
+.yellow {
+    background-color: var(--bright-yellow);
+    color: #000;
+}
+
+.offwhite {
+    background-color: var(--off-white);
+    color: var(--black);
+}
+
+.offblack {
+    background-color: var(--off-black);
+    color: var(--white);
+}
+
+.red {
+    background-color: var(--red);
+    color: #fff;
+}
+
+.black {
+    background-color: #000;
+    color: #fff;
+}
+
+.white {
+    background-color: #fff;
+    color: #000;
+}
+
+.lora {
+    font-family: "Lora", serif;
+}
+
+.cousine {
+    font-family: "Cousine", monospace;
+}
+
+dl,
+ol {
+    margin: 1em auto;
+    width: 66%;
+}
+
+dt {
+    margin-top: .66em;
+}
+
+img {
+    height: auto;
+    margin: 0 auto;
+    max-height: 400px;
+    max-width: 400px;
+    width: auto;
+    display: block;
+}

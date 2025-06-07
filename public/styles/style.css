@@ -1,0 +1,334 @@
+/* #region global */
+* {
+    border: none;
+    box-sizing: border-box;
+    color: inherit;
+    font-family: inherit;
+    word-wrap: break-word;
+    padding: 0;
+}
+
+:root {
+    --black:        rgb(000, 000, 000);
+    --white:        rgb(255, 255, 255);
+    --off-black:    rgb(016, 016, 016);
+    --off-white:    rgb(239, 239, 239);
+    --rustic-black: rgb(025, 025, 055);
+    --rustic-white: rgb(235, 235, 200);
+
+    --red:          rgb(155, 0, 0);
+    --bright-yellow:rgb(255, 255, 175);
+    --tan:          rgb(245, 245, 220);
+    --light-green:  rgb(127, 159, 155);
+    --medium-green: rgb(80, 143, 145);
+    --dark-green:   rgb(13, 88, 97);
+
+    --mono: "Cousine", monospace;
+    --serif: "Lora", serif;
+
+    --space-size: clamp(10px, 9vmin, 84px);
+    --space-width: var(--space-size);
+    --space-height: var(--space-size);
+    --space-gap: 0.33rem;
+    --space-gap-h: var(--space-gap);
+    --space-gap-v: var(--space-gap);
+}
+
+h2,
+h3,
+h4 {
+    font-family: "Lora", serif;
+    padding: 0.25em;
+}
+
+section {
+    background-color: var(--off-white);
+    box-shadow: 4px 0 8px var(--off-black), -4px 0 8px var(--off-black);
+    border-radius: .33em;
+    margin: .66em;
+    padding: .33em;
+}
+
+section section {
+    padding: 4px;
+    margin: .33em;
+    box-shadow: none;
+    border: 1px solid var(--off-black);
+}
+
+p {
+    margin: .33em auto;
+    width: 90%;
+}
+
+dl,
+ol {
+    margin: 1em auto;
+    width: 66%;
+}
+
+dt {
+    margin-top: .66em;
+}
+
+img {
+    height: auto;
+    margin: 0 auto;
+    max-height: 400px;
+    max-width: 400px;
+    width: auto;
+    display: block;
+}
+
+/* #endregion global */
+
+/* #region page */
+html {
+    background-color: var(--medium-green);
+    color: var(--black);
+    font-family: "Cousine", monospace;
+}
+
+body {
+    margin: 0;
+}
+
+#content {
+    margin: 0 auto;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+main {
+    background-color: var(--tan);
+    grid-column: 1/-1;
+    padding: 4px 2px;
+}
+/* #endregion page */
+
+/* #region header */
+header {
+    background-color: var(--dark-green);
+    text-align: center;
+    display: grid;
+    position: relative;
+}
+
+header img {
+    max-width: 166px;
+}
+
+header h1, 
+header h2 {
+    color: var(--off-white);
+    font-family: "Lora", serif;
+    margin: auto 0.25em;
+}
+
+header h1 span {}
+
+header button {
+    aspect-ratio: 1;
+    border-radius: 999in;
+    position: absolute;
+    right: .66em;
+    top: .66em;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+
+}
+
+/* #endregion header */
+
+/* #region nav */
+nav {
+    
+}
+nav a {}
+/* #endregion nav */
+
+/* #region footer */
+footer {
+    background-color: var(--dark-green);
+    color: var(--off-white);
+    height: 100%;
+    grid-column: 1/-1;
+    padding: 10px;
+    text-align: center;
+}
+/* #endregion footer */
+
+/* #region proposal */
+.color {
+    border: 1px solid;
+    padding: 1em;
+}
+
+.tan {
+    background-color: var(--tan);
+    color: #000;
+}
+
+.dgreen {
+    background-color: var(--dark-green);
+    color: #fff;
+}
+
+.mgreen {
+    background-color: var(--medium-green);
+    color: #000;
+}
+
+.lgreen {
+    background-color: var(--light-green);
+    color: #000;
+}
+
+.yellow {
+    background-color: var(--bright-yellow);
+    color: #000;
+}
+
+.offwhite {
+    background-color: var(--off-white);
+    color: var(--black);
+}
+
+.offblack {
+    background-color: var(--off-black);
+    color: var(--white);
+}
+
+.red {
+    background-color: var(--red);
+    color: #fff;
+}
+
+.black {
+    background-color: #000;
+    color: #fff;
+}
+
+.white {
+    background-color: #fff;
+    color: #000;
+}
+
+.lora {
+    font-family: "Lora", serif;
+}
+
+.cousine {
+    font-family: "Cousine", monospace;
+}
+/* #endregion proposal */
+
+/* #region board */
+#board {
+    aspect-ratio: 1;
+    background-color: var(--dark-green);
+    box-shadow: 0 0 .25em var(--off-black);
+    border-radius: 2.5em;
+    color: var(--bright-yellow);
+    font-family: var(--mono);
+    height: calc((var(--space-height) * 9));
+    margin: auto;
+    width: calc((var(--space-width) * 9));
+}
+
+#board table {
+    border-collapse: collapse;
+    height: 100%;
+    width: 100%;
+}
+
+#board :where(th, td) {height: var(--space-height); width: var(--space-width);}
+#board :where(thead, tfoot) :where(th, td) {height: calc(var(--space-height) * 0.5);}
+#board :where(tbody th, :where(thead, tfoot) td) {width: calc(var(--space-width) * 0.5);}
+
+tr:nth-of-type( odd) td:nth-of-type( odd) .space { --bg: var(--rustic-white); --txt: var(--black);}
+tr:nth-of-type(even) td:nth-of-type(even) .space { --bg: var(--rustic-white); --txt: var(--black);}
+
+tr:nth-of-type( odd) td:nth-of-type(even) .space { --bg: var(--rustic-black); --txt: var(--white);}
+tr:nth-of-type(even) td:nth-of-type( odd) .space { --bg: var(--rustic-black); --txt: var(--white);}
+
+#board .space {
+    background-color: var(--bg);
+    color: var(--txt);
+    font-size: 3rem;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+#board tr:first-of-type td:first-of-type .space {border-radius: 1rem 0 0  ;}
+#board tr:first-of-type td:last-of-type  .space {border-radius: 0 1rem 0 0;}
+#board tr:last-of-type  td:first-of-type .space {border-radius: 0 0 0 1rem;}
+#board tr:last-of-type  td:last-of-type  .space {border-radius: 0 0 1rem  ;}
+
+#board tbody .space:hover {
+    box-shadow: 0 0 .1em .1em #f00, inset 0 0 .1em .1em #f00;
+    z-index: 1;
+}
+
+tbody tr:has(th:hover) {
+    box-shadow: 0 0 .1em .1em #0f0, inset 0 0 .1em .1em #0f0;
+    position: relative;
+    z-index: 1;
+}
+
+#board :has(:where(thead, tfoot) th:nth-of-type(1):hover) :where(thead th,tfoot th, tbody td):nth-of-type(1), 
+#board :has(:where(thead, tfoot) th:nth-of-type(2):hover) :where(thead th,tfoot th, tbody td):nth-of-type(2), 
+#board :has(:where(thead, tfoot) th:nth-of-type(3):hover) :where(thead th,tfoot th, tbody td):nth-of-type(3), 
+#board :has(:where(thead, tfoot) th:nth-of-type(4):hover) :where(thead th,tfoot th, tbody td):nth-of-type(4), 
+#board :has(:where(thead, tfoot) th:nth-of-type(5):hover) :where(thead th,tfoot th, tbody td):nth-of-type(5), 
+#board :has(:where(thead, tfoot) th:nth-of-type(6):hover) :where(thead th,tfoot th, tbody td):nth-of-type(6), 
+#board :has(:where(thead, tfoot) th:nth-of-type(7):hover) :where(thead th,tfoot th, tbody td):nth-of-type(7), 
+#board :has(:where(thead, tfoot) th:nth-of-type(8):hover) :where(thead th,tfoot th, tbody td):nth-of-type(8) {
+    box-shadow: 0 0 .1em .1em #f0f, inset 0 0 .1em .1em #f0f;
+    z-index: 1;
+}
+
+.space::after {
+    align-items: center;
+    aspect-ratio: 1;
+    background-color: var(--bg);
+    border-radius: 999in;
+    border: 6px double var(--brdr);
+    color: var(--clr);
+    content: attr(data-symbol);
+    display: flex;
+    height: 66.66%;
+    justify-content: center;
+    left: 50%;
+    text-shadow:
+         1px  1px 8px var(--txt-shdw),
+         1px -1px 8px var(--txt-shdw),
+        -1px -1px 8px var(--txt-shdw),
+        -1px  1px 8px var(--txt-shdw);
+    top: 50%;
+    translate: -50% -50%;
+    position: absolute;
+    width: 66.66%;
+    z-index: 10;
+}
+
+.space[data-color=black]::after {
+    --bg:       var(--off-black);
+    --brdr:     var(--white);
+    --clr:      var(--white);
+    --txt-shdw: var(--black);
+}
+
+.space[data-color=white]::after {
+    --bg:       var(--off-white);
+    --brdr:     var(--black);
+    --clr:      var(--black);
+    --txt-shdw: var(--white);
+}
+
+/* #endregion board */

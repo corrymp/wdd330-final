@@ -5,20 +5,318 @@
     <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Project</title>
+
+    <title>Home | SiteName</title>
     <meta name="author" content="Corry McConnell Palmer">
-    <meta name="description" content="Final Project">
+    <meta name="description" content="Home page view for CorryMP's final project in WDD330">
+
     <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQIW2NgAAIAAAUAAR4f7BQAAAAASUVORK5CYII=">
-    <link rel="stylesheet" href="./styles/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cousine:ital@0;1&family=Lora:ital@0;1&display=swap">
+    <link rel="stylesheet" href="/public/styles/style.css">
+    <link rel="stylesheet" href="/public/styles/style-large.css">
+
+    <script src="/public/scripts/script.js" defer></script>
+    <script src="/public/scripts/main.js" type="module"></script>
 </head>
 
 <body>
     <div id="content">
-        <header></header>
-        <nav></nav>
-        <main></main>
+        <header>
+            <img src="public/images/icon.svg" alt="SiteName">
+            <h2>Site<span>Name</span></h2>
+            <button id="theme-btn">DM</button>
+        </header>
+
+        <nav>
+            <a href="/" title="navigate to home page">Home</a>
+            <a href="/about" title="navigate to about page">About</a>
+            <a href="/links" title="navigate to links page">Links</a>
+        </nav>
+
+        <main>
+            <section>
+                <h1>Home</h1>
+
+                <div id="board">
+                    <table>
+                        <colgroup>
+                            <col>
+                            <col class="file" data-file="1">
+                            <col class="file" data-file="2">
+                            <col class="file" data-file="3">
+                            <col class="file" data-file="4">
+                            <col class="file" data-file="5">
+                            <col class="file" data-file="6">
+                            <col class="file" data-file="7">
+                            <col class="file" data-file="8">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                                <th>4</th>
+                                <th>5</th>
+                                <th>6</th>
+                                <th>7</th>
+                                <th>8</th>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="rank" data-rank="h">
+                                <th>h</th>
+                                <td><button type="button" class="space" data-space="h1" data-rank="1" data-file="h" data-y="0" data-x="0"></button></td>
+                                <td><button type="button" class="space" data-space="h2" data-rank="2" data-file="h" data-y="0" data-x="1"></button></td>
+                                <td><button type="button" class="space" data-space="h3" data-rank="3" data-file="h" data-y="0" data-x="2"></button></td>
+                                <td><button type="button" class="space" data-space="h4" data-rank="4" data-file="h" data-y="0" data-x="3"></button></td>
+                                <td><button type="button" class="space" data-space="h5" data-rank="5" data-file="h" data-y="0" data-x="4"></button></td>
+                                <td><button type="button" class="space" data-space="h6" data-rank="6" data-file="h" data-y="0" data-x="5"></button></td>
+                                <td><button type="button" class="space" data-space="h7" data-rank="7" data-file="h" data-y="0" data-x="6"></button></td>
+                                <td><button type="button" class="space" data-space="h8" data-rank="8" data-file="h" data-y="0" data-x="7"></button></td>
+                                <th>h</th>
+                            </tr>
+                            <tr class="rank" data-rank="g">
+                                <th>g</th>
+                                <td><button type="button" class="space" data-space="g1" data-rank="1" data-file="g" data-y="1" data-x="0"></button></td>
+                                <td><button type="button" class="space" data-space="g2" data-rank="2" data-file="g" data-y="1" data-x="1"></button></td>
+                                <td><button type="button" class="space" data-space="g3" data-rank="3" data-file="g" data-y="1" data-x="2"></button></td>
+                                <td><button type="button" class="space" data-space="g4" data-rank="4" data-file="g" data-y="1" data-x="3"></button></td>
+                                <td><button type="button" class="space" data-space="g5" data-rank="5" data-file="g" data-y="1" data-x="4"></button></td>
+                                <td><button type="button" class="space" data-space="g6" data-rank="6" data-file="g" data-y="1" data-x="5"></button></td>
+                                <td><button type="button" class="space" data-space="g7" data-rank="7" data-file="g" data-y="1" data-x="6"></button></td>
+                                <td><button type="button" class="space" data-space="g8" data-rank="8" data-file="g" data-y="1" data-x="7"></button></td>
+                                <th>g</th>
+                            </tr>
+                            <tr class="rank" data-rank="f">
+                                <th>f</th>
+                                <td><button type="button" class="space" data-space="f1" data-rank="1" data-file="f" data-y="2" data-x="0"></button></td>
+                                <td><button type="button" class="space" data-space="f2" data-rank="2" data-file="f" data-y="2" data-x="1"></button></td>
+                                <td><button type="button" class="space" data-space="f3" data-rank="3" data-file="f" data-y="2" data-x="2"></button></td>
+                                <td><button type="button" class="space" data-space="f4" data-rank="4" data-file="f" data-y="2" data-x="3"></button></td>
+                                <td><button type="button" class="space" data-space="f5" data-rank="5" data-file="f" data-y="2" data-x="4"></button></td>
+                                <td><button type="button" class="space" data-space="f6" data-rank="6" data-file="f" data-y="2" data-x="5"></button></td>
+                                <td><button type="button" class="space" data-space="f7" data-rank="7" data-file="f" data-y="2" data-x="6"></button></td>
+                                <td><button type="button" class="space" data-space="f8" data-rank="8" data-file="f" data-y="2" data-x="7"></button></td>
+                                <th>f</th>
+                            </tr>
+                            <tr class="rank" data-rank="e">
+                                <th>e</th>
+                                <td><button type="button" class="space" data-space="e1" data-rank="1" data-file="e" data-y="3" data-x="0"></button></td>
+                                <td><button type="button" class="space" data-space="e2" data-rank="2" data-file="e" data-y="3" data-x="1"></button></td>
+                                <td><button type="button" class="space" data-space="e3" data-rank="3" data-file="e" data-y="3" data-x="2"></button></td>
+                                <td><button type="button" class="space" data-space="e4" data-rank="4" data-file="e" data-y="3" data-x="3"></button></td>
+                                <td><button type="button" class="space" data-space="e5" data-rank="5" data-file="e" data-y="3" data-x="4"></button></td>
+                                <td><button type="button" class="space" data-space="e6" data-rank="6" data-file="e" data-y="3" data-x="5"></button></td>
+                                <td><button type="button" class="space" data-space="e7" data-rank="7" data-file="e" data-y="3" data-x="6"></button></td>
+                                <td><button type="button" class="space" data-space="e8" data-rank="8" data-file="e" data-y="3" data-x="7"></button></td>
+                                <th>e</th>
+                            </tr>
+                            <tr class="rank" data-rank="d">
+                                <th>d</th>
+                                <td><button type="button" class="space" data-space="d1" data-rank="1" data-file="d" data-y="4" data-x="0"></button></td>
+                                <td><button type="button" class="space" data-space="d2" data-rank="2" data-file="d" data-y="4" data-x="1"></button></td>
+                                <td><button type="button" class="space" data-space="d3" data-rank="3" data-file="d" data-y="4" data-x="2"></button></td>
+                                <td><button type="button" class="space" data-space="d4" data-rank="4" data-file="d" data-y="4" data-x="3"></button></td>
+                                <td><button type="button" class="space" data-space="d5" data-rank="5" data-file="d" data-y="4" data-x="4"></button></td>
+                                <td><button type="button" class="space" data-space="d6" data-rank="6" data-file="d" data-y="4" data-x="5"></button></td>
+                                <td><button type="button" class="space" data-space="d7" data-rank="7" data-file="d" data-y="4" data-x="6"></button></td>
+                                <td><button type="button" class="space" data-space="d8" data-rank="8" data-file="d" data-y="4" data-x="7"></button></td>
+                                <th>d</th>
+                            </tr>
+                            <tr class="rank" data-rank="c">
+                                <th>c</th>
+                                <td><button type="button" class="space" data-space="c1" data-rank="1" data-file="c" data-y="5" data-x="0"></button></td>
+                                <td><button type="button" class="space" data-space="c2" data-rank="2" data-file="c" data-y="5" data-x="1"></button></td>
+                                <td><button type="button" class="space" data-space="c3" data-rank="3" data-file="c" data-y="5" data-x="2"></button></td>
+                                <td><button type="button" class="space" data-space="c4" data-rank="4" data-file="c" data-y="5" data-x="3"></button></td>
+                                <td><button type="button" class="space" data-space="c5" data-rank="5" data-file="c" data-y="5" data-x="4"></button></td>
+                                <td><button type="button" class="space" data-space="c6" data-rank="6" data-file="c" data-y="5" data-x="5"></button></td>
+                                <td><button type="button" class="space" data-space="c7" data-rank="7" data-file="c" data-y="5" data-x="6"></button></td>
+                                <td><button type="button" class="space" data-space="c8" data-rank="8" data-file="c" data-y="5" data-x="7"></button></td>
+                                <th>c</th>
+                            </tr>
+                            <tr class="rank" data-rank="b">
+                                <th>b</th>
+                                <td><button type="button" class="space" data-space="b1" data-rank="1" data-file="b" data-y="6" data-x="0"></button></td>
+                                <td><button type="button" class="space" data-space="b2" data-rank="2" data-file="b" data-y="6" data-x="1"></button></td>
+                                <td><button type="button" class="space" data-space="b3" data-rank="3" data-file="b" data-y="6" data-x="2"></button></td>
+                                <td><button type="button" class="space" data-space="b4" data-rank="4" data-file="b" data-y="6" data-x="3"></button></td>
+                                <td><button type="button" class="space" data-space="b5" data-rank="5" data-file="b" data-y="6" data-x="4"></button></td>
+                                <td><button type="button" class="space" data-space="b6" data-rank="6" data-file="b" data-y="6" data-x="5"></button></td>
+                                <td><button type="button" class="space" data-space="b7" data-rank="7" data-file="b" data-y="6" data-x="6"></button></td>
+                                <td><button type="button" class="space" data-space="b8" data-rank="8" data-file="b" data-y="6" data-x="7"></button></td>
+                                <th>b</th>
+                            </tr>
+                            <tr class="rank" data-rank="a">
+                                <th>a</th>
+                                <td><button type="button" class="space" data-space="a1" data-rank="1" data-file="a" data-y="7" data-x="0"></button></td>
+                                <td><button type="button" class="space" data-space="a2" data-rank="2" data-file="a" data-y="7" data-x="1"></button></td>
+                                <td><button type="button" class="space" data-space="a3" data-rank="3" data-file="a" data-y="7" data-x="2"></button></td>
+                                <td><button type="button" class="space" data-space="a4" data-rank="4" data-file="a" data-y="7" data-x="3"></button></td>
+                                <td><button type="button" class="space" data-space="a5" data-rank="5" data-file="a" data-y="7" data-x="4"></button></td>
+                                <td><button type="button" class="space" data-space="a6" data-rank="6" data-file="a" data-y="7" data-x="5"></button></td>
+                                <td><button type="button" class="space" data-space="a7" data-rank="7" data-file="a" data-y="7" data-x="6"></button></td>
+                                <td><button type="button" class="space" data-space="a8" data-rank="8" data-file="a" data-y="7" data-x="7"></button></td>
+                                <th>a</th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                                <th>4</th>
+                                <th>5</th>
+                                <th>6</th>
+                                <th>7</th>
+                                <th>8</th>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <section id="history">
+                    <h2>Game History</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <th>White</th>
+                                <th>Black</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td>Nf3</td>
+                                <td>Nf6</td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td>c4</td>
+                                <td>g6</td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td>Nc3</td>
+                                <td>Bg7</td>
+                            </tr>
+                            <tr>
+                                <td>4.</td>
+                                <td>d4</td>
+                                <td>0-0</td>
+                            </tr>
+                            <tr>
+                                <td>5.</td>
+                                <td>Bf4</td>
+                                <td>d5</td>
+                            </tr>
+                            <tr>
+                                <td>6.</td>
+                                <td>Qb6</td>
+                                <td>dxc4</td>
+                            </tr>
+                            <tr>
+                                <td>7.</td>
+                                <td>Qxc4</td>
+                                <td>c6</td>
+                            </tr>
+                            <tr>
+                                <td>8.</td>
+                                <td>e4</td>
+                                <td>Nbd7</td>
+                            </tr>
+                            <tr>
+                                <td>9.</td>
+                                <td>Rd1</td>
+                                <td>Nb6</td>
+                            </tr>
+                            <tr>
+                                <td>10.</td>
+                                <td>Qc5</td>
+                                <td>Bg4</td>
+                            </tr>
+                            <tr>
+                                <td>11.</td>
+                                <td>Bg5</td>
+                                <td>Na4</td>
+                            </tr>
+                            <tr>
+                                <td>12.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>13.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>14.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>15.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>16.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>17.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>18.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>19.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>20.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="analysis">
+                    <h2>Board Analysis</h2>
+                    <ol>
+                        <li>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, alias libero odio facilis aspernatur maxime numquam eius delectus? Facere voluptas reiciendis numquam molestiae assumenda ullam est illo voluptate, amet eos?</p>
+                        </li>
+                        <li>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium eius libero saepe distinctio repellat molestias ratione consequatur magnam! Officia a vel molestiae enim sed nobis repudiandae vero reprehenderit. Rem, minima!</p>
+                        </li>
+                        <li>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio praesentium voluptatibus quidem vel, odit, facere tenetur suscipit dolore reiciendis cum itaque, expedita ducimus magnam beatae dolores ratione corporis deleniti explicabo.</p>
+                        </li>
+                    </ol>
+                </section>
+            </section>
+        </main>
+
         <footer>
-            <p>&copy;2025 | Corry McConnell Palmer</p>
+            <p>&copy;2025 | SiteName | Corry McConnell Palmer</p>
         </footer>
     </div>
 </body>

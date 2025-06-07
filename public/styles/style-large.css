@@ -1,0 +1,93 @@
+html {
+    body {
+        div#content {
+            header {
+                img {}
+
+                h2 {
+                    span {}
+                }
+
+                button {}
+            }
+
+            nav {
+                a {}
+            }
+
+            main {
+                h1 {}
+
+                div#board {
+                    table {
+                        colgroup {
+                            col {}
+
+                            col.file {}
+                        }
+
+                        thead {
+                            tr {
+                                td {}
+
+                                th {}
+                            }
+                        }
+
+                        tbody {
+                            tr.rank {
+                                th {}
+
+                                td {
+                                    button.space {}
+                                }
+                            }
+                        }
+
+                        tfoot {
+                            tr {
+                                td {}
+
+                                th {}
+                            }
+                        }
+                    }
+                }
+
+                section#history {
+                    h2 {}
+
+                    table {
+                        thead {
+                            tr {
+                                td {}
+
+                                th {}
+                            }
+                        }
+
+                        tbody {
+                            tr {
+                                td {}
+                            }
+                        }
+                    }
+                }
+
+                section#analysis {
+                    h2 {}
+
+                    ol {
+                        li {
+                            p {}
+                        }
+                    }
+                }
+            }
+
+            footer {
+                p {}
+            }
+        }
+    }
+}

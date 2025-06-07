@@ -1,0 +1,20 @@
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%if(title){%><%- title %> | <%}%>SiteName</title>
+    <meta name="author" content="Corry McConnell Palmer">
+    <meta name="description" content="<%if(desc){%><%- desc %><%}else{%>Part of CorryMP's final project in WDD330<%}%>">
+    
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQIW2NgAAIAAAUAAR4f7BQAAAAASUVORK5CYII=">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cousine:ital@0;1&family=Lora:ital@0;1&display=swap">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/style-large.css">
+
+    <script src="./scripts/script.js" defer></script><% if (title === 'Home') { %>
+    <script src="/scripts/main.js" type="module"></script><% } %>
+</head>

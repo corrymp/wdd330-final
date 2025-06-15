@@ -9,24 +9,58 @@
 }
 
 :root {
-    --black:        rgb(000, 000, 000);
-    --white:        rgb(255, 255, 255);
-    --off-black:    rgb(016, 016, 016);
-    --off-white:    rgb(239, 239, 239);
-    --rustic-black: rgb(025, 025, 055);
-    --rustic-white: rgb(235, 235, 200);
+    color-scheme: light dark;
 
-    --red:          rgb(155, 0, 0);
-    --bright-yellow:rgb(255, 255, 175);
-    --tan:          rgb(245, 245, 220);
-    --light-green:  rgb(127, 159, 155);
-    --medium-green: rgb(80, 143, 145);
-    --dark-green:   rgb(13, 88, 97);
+    --black-l:          rgb(000, 000, 000);
+    --black-d:          rgb(010, 010, 010);
+    --black:            light-dark(var(--black-l), var(--black-d));
+
+    --white-l:          rgb(255, 255, 255);
+    --white-d:          rgb(245, 245, 245);
+    --white:            light-dark(var(--white-l), var(--white-d));
+
+    --off-black-l:      rgb(016, 016, 016);
+    --off-black-d:      rgb(015, 015, 015);
+    --off-black:        light-dark(var(--off-black-l), var(--off-black-d));
+
+    --off-white-l:      rgb(239, 239, 239);
+    --off-white-d:      rgb(228, 228, 228);
+    --off-white:        light-dark(var(--off-white-l), var(--off-white-d));
+
+    --rustic-black-l:   rgb(025, 025, 055);
+    --rustic-black-d:   rgb(015, 015, 045);
+    --rustic-black:     light-dark(var(--rustic-black-l), var(--rustic-black-d));
+
+    --rustic-white-l:   rgb(235, 235, 200);
+    --rustic-white-d:   rgb(225, 225, 190);
+    --rustic-white:     light-dark(var(--rustic-white-l), var(--rustic-white-d));
+
+    --red:            rgb(155, 000, 000);
+
+    --bright-yellow-l:  rgb(255, 255, 175);
+    --bright-yellow-d:  rgb(223, 223, 143);
+    --bright-yellow:    light-dark(var(--bright-yellow-l), var(--bright-yellow-d));
+
+    --tan-l:            rgb(245, 245, 220);
+    --tan-d:            rgb(163, 163, 147);
+    --tan:              light-dark(var(--tan-l), var(--tan-d));
+
+    --light-green-l:    rgb(127, 159, 155);
+    --light-green-d:    rgb(064, 080, 78);
+    --light-green:      light-dark(var(--light-green-l), var(--light-green-d));
+
+    --medium-green-l:   rgb(080, 143, 145);
+    --medium-green-d:   rgb(040, 072, 073);
+    --medium-green:     light-dark(var(--medium-green-l), var(--medium-green-d));
+
+    --dark-green-l:     rgb(013, 088, 097);
+    --dark-green-d:     rgb(007, 044, 049);
+    --dark-green:       light-dark(var(--dark-green-l), var(--dark-green-d));
 
     --mono: "Cousine", monospace;
     --serif: "Lora", serif;
 
-    --space-size: clamp(10px, 9vmin, 84px);
+    --space-size: clamp(10px, 7vmin, 64px);
     --space-width: var(--space-size);
     --space-height: var(--space-size);
     --space-gap: 0.33rem;
@@ -34,6 +68,15 @@
     --space-gap-v: var(--space-gap);
 }
 
+:root.dark {
+    color-scheme: dark;
+}
+
+:root.light {
+    color-scheme: light;
+}
+
+h1,
 h2,
 h3,
 h4 {
@@ -58,13 +101,13 @@ section section {
 
 p {
     margin: .33em auto;
-    width: 90%;
 }
 
 dl,
 ol {
     margin: 1em auto;
     width: 66%;
+    width: 90%;
 }
 
 dt {
@@ -96,8 +139,6 @@ body {
 #content {
     margin: 0 auto;
     max-width: 900px;
-    display: grid;
-    grid-template-columns: auto auto;
 }
 
 main {
@@ -113,10 +154,15 @@ header {
     text-align: center;
     display: grid;
     position: relative;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
 }
 
 header img {
-    max-width: 166px;
+    max-width: 150px;
+    max-height: 100px;
+    grid-column: 1/2;
+    grid-row: 1;
 }
 
 header h1, 
@@ -126,7 +172,20 @@ header h2 {
     margin: auto 0.25em;
 }
 
+header h2 {
+    grid-column: 2/3;
+    grid-row: 1;
+}
+
 header h1 span {}
+
+header div {
+
+}
+
+header div:hover select {
+    display: block;
+}
 
 header button {
     aspect-ratio: 1;
@@ -137,17 +196,39 @@ header button {
     text-align: center;
     vertical-align: middle;
     display: inline-block;
+}
 
+header button::after {
+    content: '🌙';
+}
+
+select {
+    display: none;
+    grid-column: 2/3;
+    grid-row: 1;
 }
 
 /* #endregion header */
 
 /* #region nav */
 nav {
-    
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1em;
 }
-nav a {}
+nav a {
+
+}
 /* #endregion nav */
+
+/* #region main */
+main>section {
+}
+
+h1 {
+    display: none;
+}
+/* #endregion main */
 
 /* #region footer */
 footer {
@@ -225,7 +306,6 @@ footer {
 }
 /* #endregion proposal */
 
-/* #region board */
 #board {
     aspect-ratio: 1;
     background-color: var(--dark-green);
@@ -238,6 +318,7 @@ footer {
     width: calc((var(--space-width) * 9));
 }
 
+/* #region board */
 #board table {
     border-collapse: collapse;
     height: 100%;
@@ -296,20 +377,20 @@ tbody tr:has(th:hover) {
 .space::after {
     align-items: center;
     aspect-ratio: 1;
-    background-color: var(--bg);
+    background-color: var(--disc);
     border-radius: 999in;
-    border: 6px double var(--brdr);
-    color: var(--clr);
+    border: 6px double var(--rim);
+    color: var(--symbolColor);
     content: attr(data-symbol);
     display: flex;
     height: 66.66%;
     justify-content: center;
     left: 50%;
     text-shadow:
-         1px  1px 8px var(--txt-shdw),
-         1px -1px 8px var(--txt-shdw),
-        -1px -1px 8px var(--txt-shdw),
-        -1px  1px 8px var(--txt-shdw);
+         1px  1px 8px var(--symbolAura),
+         1px -1px 8px var(--symbolAura),
+        -1px -1px 8px var(--symbolAura),
+        -1px  1px 8px var(--symbolAura);
     top: 50%;
     translate: -50% -50%;
     position: absolute;
@@ -318,17 +399,93 @@ tbody tr:has(th:hover) {
 }
 
 .space[data-color=black]::after {
-    --bg:       var(--off-black);
-    --brdr:     var(--white);
-    --clr:      var(--white);
-    --txt-shdw: var(--black);
+    --disc:        var(--off-black);
+    --rim:         var(--white);
+    --symbolColor: var(--white);
+    --symbolAura:  var(--black);
 }
 
 .space[data-color=white]::after {
-    --bg:       var(--off-white);
-    --brdr:     var(--black);
-    --clr:      var(--black);
-    --txt-shdw: var(--white);
+    --disc:        var(--off-white);
+    --rim:         var(--black);
+    --symbolColor: var(--black);
+    --symbolAura:  var(--white);
+}
+
+#board .space.selected {
+    background-color: color-mix(in hsl, var(--bg), #070 33%);
+}
+
+
+#board .space.visited {
+    background-color: color-mix(in hsl, var(--bg), #00f 10%);
+}
+
+#board .space.validMove {
+    background-color: color-mix(in hsl, var(--bg), #ff7 40%);
+}
+
+#board .space.visited.validMove {
+    background-color: color-mix(in hsl, var(--bg), #700 33%);
+}
+
+.space:where(.visited,.validMove,.selected)::before {
+    content: attr(data-space) '\A' attr(data-y) attr(data-x);
+    z-index: 999;
+    position: absolute;
+    background-color: #777;
+    border-radius: 9in;
+    left: 50%;
+    top: 50%;
+    font-size: 50%;
+    translate: -50% -50%;
+    opacity: .5;
 }
 
 /* #endregion board */
+
+section#history {
+}
+
+/* #region history */
+#history h2 {
+    font-size: 1.125em;
+}
+/* #endregion history */
+
+section#analysis {
+}
+
+/* #region analysis */
+
+/* #endregion analysis */
+
+@media screen and (min-width: 500px) {
+    main>section {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    h1 {
+        display: block;
+        font-size: 1.5em;
+        grid-column: 2/3;
+        margin: 0 1.5em 0 0;
+        text-align: right;
+    }
+
+    #board {
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+
+    #analysis {
+        grid-column: 1/-1;
+    }
+
+    #history {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+}

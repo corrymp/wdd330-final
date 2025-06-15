@@ -16,70 +16,77 @@ html {
             }
 
             main {
-                h1 {}
+                >section {
 
-                div#board {
-                    table {
-                        colgroup {
-                            col {}
+                    h1 {
+                    }
 
-                            col.file {}
-                        }
+                    div#board {
 
-                        thead {
-                            tr {
-                                td {}
+                        table {
+                            colgroup {
+                                col {}
 
-                                th {}
+                                col.file {}
                             }
-                        }
 
-                        tbody {
-                            tr.rank {
-                                th {}
+                            thead {
+                                tr {
+                                    td {}
 
-                                td {
-                                    button.space {}
+                                    th {}
+                                }
+                            }
+
+                            tbody {
+                                tr.rank {
+                                    th {}
+
+                                    td {
+                                        button.space {}
+                                    }
+                                }
+                            }
+
+                            tfoot {
+                                tr {
+                                    td {}
+
+                                    th {}
                                 }
                             }
                         }
+                    }
 
-                        tfoot {
-                            tr {
-                                td {}
+                    section#history {
 
-                                th {}
+                        h2 {}
+
+                        table {
+                            thead {
+                                tr {
+                                    td {}
+
+                                    th {}
+                                }
+                            }
+
+                            tbody {
+                                tr {
+                                    td {}
+                                }
                             }
                         }
                     }
-                }
 
-                section#history {
-                    h2 {}
+                    section#analysis {
 
-                    table {
-                        thead {
-                            tr {
-                                td {}
+                        h2 {}
 
-                                th {}
+                        ol {
+                            li {
+                                p {}
                             }
-                        }
-
-                        tbody {
-                            tr {
-                                td {}
-                            }
-                        }
-                    }
-                }
-
-                section#analysis {
-                    h2 {}
-
-                    ol {
-                        li {
-                            p {}
                         }
                     }
                 }

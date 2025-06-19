@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="../wdd330-final">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home | SiteName</title>
+    <meta name="author" content="Corry McConnell Palmer">
+    <meta name="description" content="Home page view for CorryMP's final project in WDD330">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cousine:ital@0;1&family=Lora:ital@0;1&display=swap">
+
+    <link rel="stylesheet" href="./public/styles/style.css">
+    <link rel="stylesheet" href="./public/styles/style-medium.css" media="screen and (min-width: 750px)">
+    <link rel="stylesheet" href="./public/styles/style-large.css" media="screen and (min-width: 1000px)">
+
+    <script src="./public/scripts/script.js" defer></script>
+</head>
+
+<body class="not-home">
+    <div id="content">
+        <header>
+            <img src="./public/images/icon.svg" alt="SiteName">
+            <h2>Chess<span>It</span></h2>
+            <div>
+                <button role="button" title="change site theme" id="theme-btn"></button>
+
+                <label for="theme-select">Select site theme</label>
+                <select id="theme-select">
+                    <option value="system">system</option>
+                    <option value="light">light</option>
+                    <option value="dark">dark</option>
+                </select>
+            </div>
+        </header>
+
+        <nav>
+            <a href="/" title="navigate to home page">Home</a>
+            <a href="/about" title="navigate to about page">About</a>
+            <a href="/links" title="navigate to links page">Links</a>
+        </nav>
+
+        <main>
+            <section>
+                <h1>Links</h1>
+
+                <p>Here are a few links to past projects and such</p>
+                <a href="/proposal">Project Proposal</a>
+                <a target="_blank" href="https://corrymp.github.io/wdd231/">Past course wep page</a>
+                <a target="_blank" href="https://corrymp.github.io/wdd130/thebestboy/">WDD130 final</a>
+                <a target="_blank" href="https://corrymp.github.io/wdd131/project/project.html">WDD 131 final</a>
+                <a target="_blank" href="https://corrymp.github.io/wdd231/project/">WDD 231 final</a>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy;2025 | ChessIt | Corry McConnell Palmer</p>
+        </footer>
+    </div>
+</body>
+
+</html>

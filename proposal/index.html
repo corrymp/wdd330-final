@@ -8,22 +8,47 @@
     <title>Final Project Proposal</title>
     <meta name="author" content="Corry McConnell Palmer">
     <meta name="description" content="Proposal for final project">
-    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQIW2NgAAIAAAUAAR4f7BQAAAAASUVORK5CYII=">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cousine:ital@0;1&family=Lora:ital@0;1&display=swap">
 
     <link rel="stylesheet" href="./public/styles/style.css">
+    <link rel="stylesheet" href="./public/styles/style-medium.css" media="screen and (min-width: 750px)">
+    <link rel="stylesheet" href="./public/styles/style-large.css" media="screen and (min-width: 1000px)">
+
+    <script src="./public/scripts/script.js" defer></script>
 </head>
 
-<body>
+<body class="not-home">
     <div id="content">
         <header>
             <img src="./public/images/icon.svg" alt="SiteName">
-            <h2>Site<span>Name</span></h2>
-            <button id="theme-btn">DM</button>
+            <h2>Chess<span>It</span></h2>
+            <div>
+                <button role="button" title="change site theme" id="theme-btn"></button>
+
+                <label for="theme-select">Select site theme</label>
+                <select id="theme-select">
+                    <option value="system">system</option>
+                    <option value="light">light</option>
+                    <option value="dark">dark</option>
+                </select>
+            </div>
         </header>
-        <main>
+
+        <nav>
+            <a href="/" title="navigate to home page">Home</a>
+            <a href="/about" title="navigate to about page">About</a>
+            <a href="/links" title="navigate to links page">Links</a>
+        </nav>
+
+        <main id="proposal">
             <header>
                 <h1>WDD330 Final Project Proposal</h1>
                 <h2>by Corry McConnell Palmer</h2>
@@ -175,7 +200,7 @@
         </main>
 
         <footer>
-            <p>&copy;2025 | Corry McConnell Palmer</p>
+            <p>&copy;2025 | ChessIt | Corry McConnell Palmer</p>
         </footer>
     </div>
 </body>

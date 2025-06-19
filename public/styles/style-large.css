@@ -1,100 +1,65 @@
-html {
-    body {
-        div#content {
-            header {
-                img {}
+:root {
+    --space-size: clamp(10px, 8vw, 82.66px);
+}
 
-                h2 {
-                    span {}
-                }
+body:not(.not-home) main>section {
+    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: calc(var(--space-size) * 3.5 + .3em) calc(var(--space-size) * 5.5 + .33em);
+    justify-content: start;
+}
 
-                button {}
-            }
+#board {
+    grid-row: 1/3;
+}
 
-            nav {
-                a {}
-            }
+#history {
+    grid-row: 1/2;
+    height: calc(100% - .66em);
+}
 
-            main {
-                >section {
+#history table tr * {
+    padding: 0 .66em;
+    text-align: left;
+}
 
-                    h1 {
-                    }
+#history table tr :first-child {
+    padding: 0 .66em;
+    text-align: right;
+}
 
-                    div#board {
+#history thead th:first-of-type {
+    padding-right: 1.25em;
+}
 
-                        table {
-                            colgroup {
-                                col {}
+#analysis,
+#analysis:has(>ol:empty) {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    height: calc(100% - .66em);
+    position: relative;
+}
 
-                                col.file {}
-                            }
+#analysis>ol {
+    bottom: 0;
+    left: .66em;
+    overflow-y: auto;
+    padding: .33em .66em;
+    position: absolute;
+    right: .66em;
+    scrollbar-width: thin;
+    top: 4em;
+}
 
-                            thead {
-                                tr {
-                                    td {}
+#analysis>ol:not(:has(li:nth-of-type(6))) {
+    height: min-content;
+}
 
-                                    th {}
-                                }
-                            }
+#analysis article {
+    padding: .33rem;
+}
 
-                            tbody {
-                                tr.rank {
-                                    th {}
-
-                                    td {
-                                        button.space {}
-                                    }
-                                }
-                            }
-
-                            tfoot {
-                                tr {
-                                    td {}
-
-                                    th {}
-                                }
-                            }
-                        }
-                    }
-
-                    section#history {
-
-                        h2 {}
-
-                        table {
-                            thead {
-                                tr {
-                                    td {}
-
-                                    th {}
-                                }
-                            }
-
-                            tbody {
-                                tr {
-                                    td {}
-                                }
-                            }
-                        }
-                    }
-
-                    section#analysis {
-
-                        h2 {}
-
-                        ol {
-                            li {
-                                p {}
-                            }
-                        }
-                    }
-                }
-            }
-
-            footer {
-                p {}
-            }
-        }
-    }
+#analysis article p {
+    padding: .33rem;
+    text-align: unset;
 }

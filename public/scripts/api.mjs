@@ -1,32 +1,15 @@
+// ChessAPI Request structure
 /**
- * @typedef FenString
- * @type {string}
- * 
+ * @method POST
+ * @param {string} fen              - FEN string
+ * @param {number} variants         - optional - [default: 1, max: 5]
+ * @param {number} depth            - optional - [default: 12 (IM), max: 18 (GM) (20: Magnus Carlsen)]
+ * @param {number} maxThinkingTime  - optional - [default: 50, max: 100]
+ * @param {string} searchmoves      - optional - specific moves to evaluate
+ * @returns {ChessApiResponse} 
  */
 
-/**
- * @typedef LichessApiResponse
- * @type {object}
- * @property {number} depth         - 
- * @property {string} fen           - FEN string
- * @property {number} knodes        - 
- * @property {object[]} pvs         - Array of Non-mate variation (object) or Mate variation (object)
- * @property {number} pvs[].cp      - Evaluation in centi-pawns, from White's point of view
- * @property {number} pvs[].mate    - Evaluation in moves to mate, from White's point of view
- * @property {string} pvs[].moves   - Variation in UCI notation ({start space}{end space} {start space}{end space} {etc.})
- * @property {string} error         - 404: position not found
- */
-/**
- * @method GET
- * @param {string} fen      - FEN string
- * @param {number} multiPv  - Optional - Number of variations
- * @param {"standard"|"chess960"|"crazyhouse"|"antichess"|"atomic"|"horde"|"kingOfTheHill"|"racingKings"|"threeCheck"|"fromPosition"} variant - Optional - Variant
- */
-async function lichessAPi(fen, multiPv, variant) {
-    const res = await fetch(`https://lichess.org/api/cloud-eval?fen=${fen}${multiPv ? `&multiPv=${multiPv}` : ''}${variant ? `&variant=${variant}` : ''}`);
-    return await res.json();
-}
-
+// ChessAPI Response structure
 /**
  * @typedef ChessApiResponse
  * @type {object}
@@ -52,23 +35,33 @@ async function lichessAPi(fen, multiPv, variant) {
  * @property {boolean} isCapture                - Whether move is capture.
  * @property {string} flags                     - Contains one or more of the string values: n - a non-capture / b - a pawn push of two squares / e - an en passant capture / c - a standard capture / p - a promotion / k - kingside castling / q - queenside castling. 
 */
-/**
- * @method POST
- * @param {string} fen              - FEN string
- * @param {number} variants         - optional - [default: 1, max: 5]
- * @param {number} depth            - optional - [default: 12 (IM), max: 18 (GM) (20: Magnus Carlsen)]
- * @param {number} maxThinkingTime  - optional - [default: 50, max: 100]
- * @param {string} searchmoves      - optional - specific moves to evaluate
- * @returns {ChessApiResponse} 
- */
-async function chessApi(fen, variants, depth, maxThinkingTime, searchmoves) {
-    const res = await fetch('https://chess-api.com/v1', {method: 'POST', header: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fen, variants, depth, maxThinkingTime, searchmoves })});
-    return await res.json();
-}
 
+// Lichess API Request structure
+/**
+ * @method GET
+ * @param {string} fen      - FEN string
+ * @param {number} multiPv  - Optional - Number of variations
+ * @param {"standard"|"chess960"|"crazyhouse"|"antichess"|"atomic"|"horde"|"kingOfTheHill"|"racingKings"|"threeCheck"|"fromPosition"} variant - Optional - Variant
+ * @returns {LichessApiResponse}
+ */
+
+// Lichess API response structure
+/**
+ * @typedef LichessApiResponse
+ * @type {object}
+ * @property {number} depth         - 
+ * @property {string} fen           - FEN string
+ * @property {number} knodes        - 
+ * @property {object[]} pvs         - Array of Non-mate variation (object) or Mate variation (object)
+ * @property {number} pvs[].cp      - Evaluation in centi-pawns, from White's point of view
+ * @property {number} pvs[].mate    - Evaluation in moves to mate, from White's point of view
+ * @property {string} pvs[].moves   - Variation in UCI notation ({start space}{end space} {start space}{end space} {etc.})
+ * @property {string} error         - 404: position not found
+ */
 
 class API {
-    constructor(apiUrl, format) {
+    constructor(main, apiUrl, format) {
+        this.main = main;
         this.url = apiUrl;
 
         if (['GET', 'POST'].includes(format)) this.format = format;
@@ -77,10 +70,24 @@ class API {
 
     async callApi(payload) {
         const request = this.format === 'GET' ? [this.buildGetUrl(payload)] : [this.url, this.prepPostPayload(payload)];
+        let response = null;
+        let parsedResponse = null;
 
-        const response = await fetch(...request);
+        try {
+            response = await fetch(...request);
+        }
+        catch (e) {
+            console.error('Error with API request:', request, e);
+            return false;
+        }
 
-        const parsedResponse = await response.json();
+        try {
+            parsedResponse = await response.json();
+        }
+        catch (e) {
+            console.error('Error parsing API response:', request, response, e);
+            return false;
+        }
 
         return parsedResponse;
     }

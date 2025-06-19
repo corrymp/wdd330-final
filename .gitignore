@@ -1,4 +1,4 @@
 node_modules
 .env
-.eslintrc.json
+.temp
 eslint.config.mjs

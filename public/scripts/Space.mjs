@@ -1,123 +1,79 @@
-const xToRank = {
-    0: 8,
-    1: 7,
-    2: 6,
-    3: 5,
-    4: 4,
-    5: 3,
-    6: 2,
-    7: 1
-};
+import { xyToIndex, yToRank, xToFile } from './utils.mjs';
 
-const rankToX = {
-    8: 0,
-    7: 1,
-    6: 2,
-    5: 3,
-    4: 4,
-    3: 5,
-    2: 6,
-    1: 7
-};
+export default class Space {
+    #rank = null;
+    #file = null;
+    get rank() {  return this.#rank }
+    get file() {  return this.#file }
 
-const yToFile = {
-    0: 'a',
-    1: 'b',
-    2: 'c',
-    3: 'd',
-    4: 'e',
-    5: 'f',
-    6: 'g',
-    7: 'h'
-};
+    #x = null;
+    #y = null;
+    get x() {  return this.#x }
+    get y() {  return this.#y }
+    get xy() {  return [this.#y, this.#x] }
 
-const fileToY = {
-    a: 0,
-    b: 1,
-    c: 2,
-    d: 3,
-    e: 4,
-    f: 5,
-    g: 6,
-    h: 7
-};
+    #index = null;
+    get index() { return this.#index;}
 
-class Space {
-    #rank       = false;
-    #file       = false;
-    #x          = false;
-    #y          = false;
-    #piece      = null;
-    #element    = null;
-    #board      = null;
+    #element = null;
+    get element() {  return this.#element }
 
-    // version of a piece with useful base properties (board, space, real)
+    #board = null;
+    get board() { return this.#board;}
+
+    // "dummy" piece with useful base properties (board, space, real) returned if the space is empty
     #noPiece = {
-        type:           false,
-        color:          false,
-        value:          false,
-        symbol:         false,
-        colorCode:      false,
-        hasMoved:       false,
-        inCheck:        false,
-        enPassantable:  false,
-        board:          false,
-        space:          false,
-        moves:          [],
-        pastMoves:      [],
-        notation:       '',
-        real:           false,
+        type: false,
+        color: false,
+        value: false,
+        symbol: false,
+        colorCode: false,
+        hasMoved: false,
+        inCheck: false,
+        board: false,
+        space: false,
+        moves: [],
+        pastMoves: [],
+        notation: '',
+        real: false,
     }
 
-    constructor(board, y, x, el) {
-        this.#board   = board;
-        this.#y       = y;
-        this.#x       = x;
-        this.#rank    = xToRank[x];
-        this.#file    = yToFile[y];
+    #piece = null;
+    get piece() {  return this.#piece ? this.#piece : this.#noPiece; }
+
+    get isEmpty() { return !this.piece.real;}
+
+    // updates the piece internally along with the visuals
+    set piece(piece) {
+        this.#piece = piece;
+        piece ? piece.space = this : void 0;
+        this.#element.dataset.symbol = piece ? piece.symbol : '';
+        this.#element.dataset.color = piece ? piece.color : '';
+        const title = `rank ${this.file}, file ${this.rank}: ${piece ? `${piece.color} ${piece.type}` : 'vacant'}`;
+        this.#element.ariaLabel = `chess board square: ${title}.`;
+        this.#element.title = title;
+    }
+
+    constructor(main, board, x, y, el) {
+        this.main = main;
+        this.#board = board;
+
+        this.#y = y;
+        this.#x = x;
+        this.#file = xToFile[x];
+        this.#rank = yToRank[y];
+        this.#index = xyToIndex(x,y);
+
         this.#element = el;
 
         this.#noPiece.board = board;
         this.#noPiece.space = this;
 
+        this.piece = null;
+
         this.#element.addEventListener('click', this.click.bind(this));
     }
-    
-    // spaces don't move, so neither does their notation
-    get x(      ) { return this.#x       }
-    get y(      ) { return this.#y       }
-    get rank(   ) { return this.#rank    }
-    get file(   ) { return this.#file    }
-    get element() { return this.#element }
-    get xy(     ) { return [this.#y,this.#x]}
 
-    // returns a "dummy" piece if the space is empty
-    get piece() {
-        if(this.#piece) return this.#piece;
-        return this.#noPiece; 
-    }
-
-    // updates the piece internally along with the visuals
-    set piece(piece) {
-        this.#piece = piece;
-
-        if(piece) {
-            this.#element.dataset.symbol = piece.symbol;
-            this.#element.dataset.color = piece.color;
-           // piece.moves = null;
-            piece.space = this;
-        }
-        else {
-            this.#element.dataset.symbol = '';
-            this.#element.dataset.color = '';
-        }
-
-        return this; 
-    }
-
-    click(e) {
-        this.#board.clickSpace(this);
-    }
+    // clicks can be fully through code (such as from an API response)
+    click = () => this.#board.clickSpace(this);
 };
-
-export default Space;

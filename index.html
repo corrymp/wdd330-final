@@ -6,17 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Home | SiteName</title>
+    <title>Home | ChessIt</title>
     <meta name="author" content="Corry McConnell Palmer">
     <meta name="description" content="Home page view for CorryMP's final project in WDD330">
 
-    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQIW2NgAAIAAAUAAR4f7BQAAAAASUVORK5CYII=">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cousine:ital@0;1&family=Lora:ital@0;1&display=swap">
+
     <link rel="stylesheet" href="./public/styles/style.css">
-    <link rel="stylesheet" href="./public/styles/style-large.css">
+    <link rel="stylesheet" href="./public/styles/style-medium.css" media="screen and (min-width: 750px)">
+    <link rel="stylesheet" href="./public/styles/style-large.css" media="screen and (min-width: 1000px)">
 
     <script src="./public/scripts/script.js" defer></script>
     <script src="./public/scripts/main.js" type="module"></script>
@@ -26,10 +31,11 @@
     <div id="content">
         <header>
             <img src="./public/images/icon.svg" alt="SiteName">
-            <h2>Site<span>Name</span></h2>
+            <h2>Chess<span>It</span></h2>
             <div>
                 <button role="button" title="change site theme" id="theme-btn"></button>
-                
+
+                <label for="theme-select">Select site theme</label>
                 <select id="theme-select">
                     <option value="system">system</option>
                     <option value="light">light</option>
@@ -42,6 +48,7 @@
             <a href="/" title="navigate to home page">Home</a>
             <a href="/about" title="navigate to about page">About</a>
             <a href="/links" title="navigate to links page">Links</a>
+            <span><button id="reset" type="button">Reset Game</button></span>
         </nav>
 
         <main>
@@ -78,100 +85,100 @@
                         </thead>
                         <tbody>
                             <tr class="rank" data-rank="8" data-y="0">
-                                <th data-rank="8" data-x="0">8</th>
-                                <td><button type="button" class="space" data-space="a8" data-file="a" data-rank="8" data-x="0" data-y="0"></button></td>
-                                <td><button type="button" class="space" data-space="b8" data-file="b" data-rank="8" data-x="0" data-y="1"></button></td>
-                                <td><button type="button" class="space" data-space="c8" data-file="c" data-rank="8" data-x="0" data-y="2"></button></td>
-                                <td><button type="button" class="space" data-space="d8" data-file="d" data-rank="8" data-x="0" data-y="3"></button></td>
-                                <td><button type="button" class="space" data-space="e8" data-file="e" data-rank="8" data-x="0" data-y="4"></button></td>
-                                <td><button type="button" class="space" data-space="f8" data-file="f" data-rank="8" data-x="0" data-y="5"></button></td>
-                                <td><button type="button" class="space" data-space="g8" data-file="g" data-rank="8" data-x="0" data-y="6"></button></td>
-                                <td><button type="button" class="space" data-space="h8" data-file="h" data-rank="8" data-x="0" data-y="7"></button></td>
-                                <th data-rank="8" data-x="0">0</th>
+                                <th data-rank="8" data-y="0">8</th>
+                                <td><button type="button" aria-label="chess board square: rank 8, a file." class="space" data-fr="a8" data-file="a" data-rank="8" data-xy="0,0" data-x="0" data-y="0"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 8, b file." class="space" data-fr="b8" data-file="b" data-rank="8" data-xy="1,0" data-x="1" data-y="0"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 8, c file." class="space" data-fr="c8" data-file="c" data-rank="8" data-xy="2,0" data-x="2" data-y="0"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 8, d file." class="space" data-fr="d8" data-file="d" data-rank="8" data-xy="3,0" data-x="3" data-y="0"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 8, e file." class="space" data-fr="e8" data-file="e" data-rank="8" data-xy="4,0" data-x="4" data-y="0"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 8, f file." class="space" data-fr="f8" data-file="f" data-rank="8" data-xy="5,0" data-x="5" data-y="0"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 8, g file." class="space" data-fr="g8" data-file="g" data-rank="8" data-xy="6,0" data-x="6" data-y="0"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 8, h file." class="space" data-fr="h8" data-file="h" data-rank="8" data-xy="7,0" data-x="7" data-y="0"></button></td>
+                                <th data-rank="8" data-y="0">0</th>
                             </tr>
                             <tr class="rank" data-rank="7" data-y="1">
-                                <th data-rank="7" data-x="1">7</th>
-                                <td><button type="button" class="space" data-space="a7" data-file="a" data-rank="7" data-x="1" data-y="0"></button></td>
-                                <td><button type="button" class="space" data-space="b7" data-file="b" data-rank="7" data-x="1" data-y="1"></button></td>
-                                <td><button type="button" class="space" data-space="c7" data-file="c" data-rank="7" data-x="1" data-y="2"></button></td>
-                                <td><button type="button" class="space" data-space="d7" data-file="d" data-rank="7" data-x="1" data-y="3"></button></td>
-                                <td><button type="button" class="space" data-space="e7" data-file="e" data-rank="7" data-x="1" data-y="4"></button></td>
-                                <td><button type="button" class="space" data-space="f7" data-file="f" data-rank="7" data-x="1" data-y="5"></button></td>
-                                <td><button type="button" class="space" data-space="g7" data-file="g" data-rank="7" data-x="1" data-y="6"></button></td>
-                                <td><button type="button" class="space" data-space="h7" data-file="h" data-rank="7" data-x="1" data-y="7"></button></td>
-                                <th data-rank="7" data-x="1">1</th>
+                                <th data-rank="7" data-y="1">7</th>
+                                <td><button type="button" aria-label="chess board square: rank 7, a file." class="space" data-fr="a7" data-file="a" data-rank="7" data-xy="0,1" data-x="0" data-y="1"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 7, b file." class="space" data-fr="b7" data-file="b" data-rank="7" data-xy="1,1" data-x="1" data-y="1"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 7, c file." class="space" data-fr="c7" data-file="c" data-rank="7" data-xy="2,1" data-x="2" data-y="1"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 7, d file." class="space" data-fr="d7" data-file="d" data-rank="7" data-xy="3,1" data-x="3" data-y="1"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 7, e file." class="space" data-fr="e7" data-file="e" data-rank="7" data-xy="4,1" data-x="4" data-y="1"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 7, f file." class="space" data-fr="f7" data-file="f" data-rank="7" data-xy="5,1" data-x="5" data-y="1"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 7, g file." class="space" data-fr="g7" data-file="g" data-rank="7" data-xy="6,1" data-x="6" data-y="1"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 7, h file." class="space" data-fr="h7" data-file="h" data-rank="7" data-xy="7,1" data-x="7" data-y="1"></button></td>
+                                <th data-rank="7" data-y="1">1</th>
                             </tr>
                             <tr class="rank" data-rank="6" data-y="2">
-                                <th data-rank="6" data-x="2">6</th>
-                                <td><button type="button" class="space" data-space="a6" data-file="a" data-rank="6" data-x="2" data-y="0"></button></td>
-                                <td><button type="button" class="space" data-space="b6" data-file="b" data-rank="6" data-x="2" data-y="1"></button></td>
-                                <td><button type="button" class="space" data-space="c6" data-file="c" data-rank="6" data-x="2" data-y="2"></button></td>
-                                <td><button type="button" class="space" data-space="d6" data-file="d" data-rank="6" data-x="2" data-y="3"></button></td>
-                                <td><button type="button" class="space" data-space="e6" data-file="e" data-rank="6" data-x="2" data-y="4"></button></td>
-                                <td><button type="button" class="space" data-space="f6" data-file="f" data-rank="6" data-x="2" data-y="5"></button></td>
-                                <td><button type="button" class="space" data-space="g6" data-file="g" data-rank="6" data-x="2" data-y="6"></button></td>
-                                <td><button type="button" class="space" data-space="h6" data-file="h" data-rank="6" data-x="2" data-y="7"></button></td>
-                                <th data-rank="6" data-x="2">2</th>
+                                <th data-rank="6" data-y="2">6</th>
+                                <td><button type="button" aria-label="chess board square: rank 6, a file." class="space" data-fr="a6" data-file="a" data-rank="6" data-xy="0,2" data-x="0" data-y="2"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 6, b file." class="space" data-fr="b6" data-file="b" data-rank="6" data-xy="1,2" data-x="1" data-y="2"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 6, c file." class="space" data-fr="c6" data-file="c" data-rank="6" data-xy="2,2" data-x="2" data-y="2"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 6, d file." class="space" data-fr="d6" data-file="d" data-rank="6" data-xy="3,2" data-x="3" data-y="2"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 6, e file." class="space" data-fr="e6" data-file="e" data-rank="6" data-xy="4,2" data-x="4" data-y="2"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 6, f file." class="space" data-fr="f6" data-file="f" data-rank="6" data-xy="5,2" data-x="5" data-y="2"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 6, g file." class="space" data-fr="g6" data-file="g" data-rank="6" data-xy="6,2" data-x="6" data-y="2"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 6, h file." class="space" data-fr="h6" data-file="h" data-rank="6" data-xy="7,2" data-x="7" data-y="2"></button></td>
+                                <th data-rank="6" data-y="2">2</th>
                             </tr>
                             <tr class="rank" data-rank="5" data-y="3">
-                                <th data-rank="5" data-x="3">5</th>
-                                <td><button type="button" class="space" data-space="a5" data-file="a" data-rank="5" data-x="3" data-y="0"></button></td>
-                                <td><button type="button" class="space" data-space="b5" data-file="b" data-rank="5" data-x="3" data-y="1"></button></td>
-                                <td><button type="button" class="space" data-space="c5" data-file="c" data-rank="5" data-x="3" data-y="2"></button></td>
-                                <td><button type="button" class="space" data-space="d5" data-file="d" data-rank="5" data-x="3" data-y="3"></button></td>
-                                <td><button type="button" class="space" data-space="e5" data-file="e" data-rank="5" data-x="3" data-y="4"></button></td>
-                                <td><button type="button" class="space" data-space="f5" data-file="f" data-rank="5" data-x="3" data-y="5"></button></td>
-                                <td><button type="button" class="space" data-space="g5" data-file="g" data-rank="5" data-x="3" data-y="6"></button></td>
-                                <td><button type="button" class="space" data-space="h5" data-file="h" data-rank="5" data-x="3" data-y="7"></button></td>
-                                <th data-rank="5" data-x="3">3</th>
+                                <th data-rank="5" data-y="3">5</th>
+                                <td><button type="button" aria-label="chess board square: rank 5, a file." class="space" data-fr="a5" data-file="a" data-rank="5" data-xy="0,3" data-x="0" data-y="3"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 5, b file." class="space" data-fr="b5" data-file="b" data-rank="5" data-xy="1,3" data-x="1" data-y="3"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 5, c file." class="space" data-fr="c5" data-file="c" data-rank="5" data-xy="2,3" data-x="2" data-y="3"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 5, d file." class="space" data-fr="d5" data-file="d" data-rank="5" data-xy="3,3" data-x="3" data-y="3"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 5, e file." class="space" data-fr="e5" data-file="e" data-rank="5" data-xy="4,3" data-x="4" data-y="3"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 5, f file." class="space" data-fr="f5" data-file="f" data-rank="5" data-xy="5,3" data-x="5" data-y="3"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 5, g file." class="space" data-fr="g5" data-file="g" data-rank="5" data-xy="6,3" data-x="6" data-y="3"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 5, h file." class="space" data-fr="h5" data-file="h" data-rank="5" data-xy="7,3" data-x="7" data-y="3"></button></td>
+                                <th data-rank="5" data-y="3">3</th>
                             </tr>
                             <tr class="rank" data-rank="4" data-y="4">
-                                <th data-rank="4" data-x="4">4</th>
-                                <td><button type="button" class="space" data-space="a4" data-file="a" data-rank="4" data-x="4" data-y="0"></button></td>
-                                <td><button type="button" class="space" data-space="b4" data-file="b" data-rank="4" data-x="4" data-y="1"></button></td>
-                                <td><button type="button" class="space" data-space="c4" data-file="c" data-rank="4" data-x="4" data-y="2"></button></td>
-                                <td><button type="button" class="space" data-space="d4" data-file="d" data-rank="4" data-x="4" data-y="3"></button></td>
-                                <td><button type="button" class="space" data-space="e4" data-file="e" data-rank="4" data-x="4" data-y="4"></button></td>
-                                <td><button type="button" class="space" data-space="f4" data-file="f" data-rank="4" data-x="4" data-y="5"></button></td>
-                                <td><button type="button" class="space" data-space="g4" data-file="g" data-rank="4" data-x="4" data-y="6"></button></td>
-                                <td><button type="button" class="space" data-space="h4" data-file="h" data-rank="4" data-x="4" data-y="7"></button></td>
-                                <th data-rank="4" data-x="4">4</th>
+                                <th data-rank="4" data-y="4">4</th>
+                                <td><button type="button" aria-label="chess board square: rank 4, a file." class="space" data-fr="a4" data-file="a" data-rank="4" data-xy="0,4" data-x="0" data-y="4"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 4, b file." class="space" data-fr="b4" data-file="b" data-rank="4" data-xy="1,4" data-x="1" data-y="4"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 4, c file." class="space" data-fr="c4" data-file="c" data-rank="4" data-xy="2,4" data-x="2" data-y="4"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 4, d file." class="space" data-fr="d4" data-file="d" data-rank="4" data-xy="3,4" data-x="3" data-y="4"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 4, e file." class="space" data-fr="e4" data-file="e" data-rank="4" data-xy="4,4" data-x="4" data-y="4"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 4, f file." class="space" data-fr="f4" data-file="f" data-rank="4" data-xy="5,4" data-x="5" data-y="4"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 4, g file." class="space" data-fr="g4" data-file="g" data-rank="4" data-xy="6,4" data-x="6" data-y="4"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 4, h file." class="space" data-fr="h4" data-file="h" data-rank="4" data-xy="7,4" data-x="7" data-y="4"></button></td>
+                                <th data-rank="4" data-y="4">4</th>
                             </tr>
                             <tr class="rank" data-rank="3" data-y="5">
-                                <th data-rank="3" data-x="5">3</th>
-                                <td><button type="button" class="space" data-space="a3" data-file="a" data-rank="3" data-x="5" data-y="0"></button></td>
-                                <td><button type="button" class="space" data-space="b3" data-file="b" data-rank="3" data-x="5" data-y="1"></button></td>
-                                <td><button type="button" class="space" data-space="c3" data-file="c" data-rank="3" data-x="5" data-y="2"></button></td>
-                                <td><button type="button" class="space" data-space="d3" data-file="d" data-rank="3" data-x="5" data-y="3"></button></td>
-                                <td><button type="button" class="space" data-space="e3" data-file="e" data-rank="3" data-x="5" data-y="4"></button></td>
-                                <td><button type="button" class="space" data-space="f3" data-file="f" data-rank="3" data-x="5" data-y="5"></button></td>
-                                <td><button type="button" class="space" data-space="g3" data-file="g" data-rank="3" data-x="5" data-y="6"></button></td>
-                                <td><button type="button" class="space" data-space="h3" data-file="h" data-rank="3" data-x="5" data-y="7"></button></td>
-                                <th data-rank="3" data-x="5">5</th>
+                                <th data-rank="3" data-y="5">3</th>
+                                <td><button type="button" aria-label="chess board square: rank 3, a file." class="space" data-fr="a3" data-file="a" data-rank="3" data-xy="0,5" data-x="0" data-y="5"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 3, b file." class="space" data-fr="b3" data-file="b" data-rank="3" data-xy="1,5" data-x="1" data-y="5"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 3, c file." class="space" data-fr="c3" data-file="c" data-rank="3" data-xy="2,5" data-x="2" data-y="5"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 3, d file." class="space" data-fr="d3" data-file="d" data-rank="3" data-xy="3,5" data-x="3" data-y="5"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 3, e file." class="space" data-fr="e3" data-file="e" data-rank="3" data-xy="4,5" data-x="4" data-y="5"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 3, f file." class="space" data-fr="f3" data-file="f" data-rank="3" data-xy="5,5" data-x="5" data-y="5"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 3, g file." class="space" data-fr="g3" data-file="g" data-rank="3" data-xy="6,5" data-x="6" data-y="5"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 3, h file." class="space" data-fr="h3" data-file="h" data-rank="3" data-xy="7,5" data-x="7" data-y="5"></button></td>
+                                <th data-rank="3" data-y="5">5</th>
                             </tr>
                             <tr class="rank" data-rank="2" data-y="6">
-                                <th data-rank="2" data-x="6">2</th>
-                                <td><button type="button" class="space" data-space="a2" data-file="a" data-rank="2" data-x="6" data-y="0"></button></td>
-                                <td><button type="button" class="space" data-space="b2" data-file="b" data-rank="2" data-x="6" data-y="1"></button></td>
-                                <td><button type="button" class="space" data-space="c2" data-file="c" data-rank="2" data-x="6" data-y="2"></button></td>
-                                <td><button type="button" class="space" data-space="d2" data-file="d" data-rank="2" data-x="6" data-y="3"></button></td>
-                                <td><button type="button" class="space" data-space="e2" data-file="e" data-rank="2" data-x="6" data-y="4"></button></td>
-                                <td><button type="button" class="space" data-space="f2" data-file="f" data-rank="2" data-x="6" data-y="5"></button></td>
-                                <td><button type="button" class="space" data-space="g2" data-file="g" data-rank="2" data-x="6" data-y="6"></button></td>
-                                <td><button type="button" class="space" data-space="h2" data-file="h" data-rank="2" data-x="6" data-y="7"></button></td>
-                                <th data-rank="2" data-x="6">6</th>
+                                <th data-rank="2" data-y="6">2</th>
+                                <td><button type="button" aria-label="chess board square: rank 2, a file." class="space" data-fr="a2" data-file="a" data-rank="2" data-xy="0,6" data-x="0" data-y="6"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 2, b file." class="space" data-fr="b2" data-file="b" data-rank="2" data-xy="1,6" data-x="1" data-y="6"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 2, c file." class="space" data-fr="c2" data-file="c" data-rank="2" data-xy="2,6" data-x="2" data-y="6"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 2, d file." class="space" data-fr="d2" data-file="d" data-rank="2" data-xy="3,6" data-x="3" data-y="6"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 2, e file." class="space" data-fr="e2" data-file="e" data-rank="2" data-xy="4,6" data-x="4" data-y="6"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 2, f file." class="space" data-fr="f2" data-file="f" data-rank="2" data-xy="5,6" data-x="5" data-y="6"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 2, g file." class="space" data-fr="g2" data-file="g" data-rank="2" data-xy="6,6" data-x="6" data-y="6"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 2, h file." class="space" data-fr="h2" data-file="h" data-rank="2" data-xy="7,6" data-x="7" data-y="6"></button></td>
+                                <th data-rank="2" data-y="6">6</th>
                             </tr>
                             <tr class="rank" data-rank="1" data-y="7">
-                                <th data-rank="1" data-x="7">1</th>
-                                <td><button type="button" class="space" data-space="a1" data-file="a" data-rank="1" data-x="7" data-y="0"></button></td>
-                                <td><button type="button" class="space" data-space="b1" data-file="b" data-rank="1" data-x="7" data-y="1"></button></td>
-                                <td><button type="button" class="space" data-space="c1" data-file="c" data-rank="1" data-x="7" data-y="2"></button></td>
-                                <td><button type="button" class="space" data-space="d1" data-file="d" data-rank="1" data-x="7" data-y="3"></button></td>
-                                <td><button type="button" class="space" data-space="e1" data-file="e" data-rank="1" data-x="7" data-y="4"></button></td>
-                                <td><button type="button" class="space" data-space="f1" data-file="f" data-rank="1" data-x="7" data-y="5"></button></td>
-                                <td><button type="button" class="space" data-space="g1" data-file="g" data-rank="1" data-x="7" data-y="6"></button></td>
-                                <td><button type="button" class="space" data-space="h1" data-file="h" data-rank="1" data-x="7" data-y="7"></button></td>
-                                <th data-rank="1" data-x="7">7</th>
+                                <th data-rank="1" data-y="7">1</th>
+                                <td><button type="button" aria-label="chess board square: rank 1, a file." class="space" data-fr="a1" data-file="a" data-rank="1" data-xy="0,7" data-x="0" data-y="7"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 1, b file." class="space" data-fr="b1" data-file="b" data-rank="1" data-xy="1,7" data-x="1" data-y="7"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 1, c file." class="space" data-fr="c1" data-file="c" data-rank="1" data-xy="2,7" data-x="2" data-y="7"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 1, d file." class="space" data-fr="d1" data-file="d" data-rank="1" data-xy="3,7" data-x="3" data-y="7"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 1, e file." class="space" data-fr="e1" data-file="e" data-rank="1" data-xy="4,7" data-x="4" data-y="7"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 1, f file." class="space" data-fr="f1" data-file="f" data-rank="1" data-xy="5,7" data-x="5" data-y="7"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 1, g file." class="space" data-fr="g1" data-file="g" data-rank="1" data-xy="6,7" data-x="6" data-y="7"></button></td>
+                                <td><button type="button" aria-label="chess board square: rank 1, h file." class="space" data-fr="h1" data-file="h" data-rank="1" data-xy="7,7" data-x="7" data-y="7"></button></td>
+                                <th data-rank="1" data-y="7">7</th>
                             </tr>
                         </tbody>
                         <tfoot>
@@ -193,138 +200,40 @@
 
                 <section id="history">
                     <h2>Game History</h2>
+
                     <table>
                         <thead>
                             <tr>
-                                <td></td>
+                                <th>#</th>
                                 <th>White</th>
                                 <th>Black</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>1.</td>
-                                <td>Nf3</td>
-                                <td>Nf6</td>
-                            </tr>
-                            <tr>
-                                <td>2.</td>
-                                <td>c4</td>
-                                <td>g6</td>
-                            </tr>
-                            <tr>
-                                <td>3.</td>
-                                <td>Nc3</td>
-                                <td>Bg7</td>
-                            </tr>
-                            <tr>
-                                <td>4.</td>
-                                <td>d4</td>
-                                <td>0-0</td>
-                            </tr>
-                            <tr>
-                                <td>5.</td>
-                                <td>Bf4</td>
-                                <td>d5</td>
-                            </tr>
-                            <tr>
-                                <td>6.</td>
-                                <td>Qb6</td>
-                                <td>dxc4</td>
-                            </tr>
-                            <tr>
-                                <td>7.</td>
-                                <td>Qxc4</td>
-                                <td>c6</td>
-                            </tr>
-                            <tr>
-                                <td>8.</td>
-                                <td>e4</td>
-                                <td>Nbd7</td>
-                            </tr>
-                            <tr>
-                                <td>9.</td>
-                                <td>Rd1</td>
-                                <td>Nb6</td>
-                            </tr>
-                            <tr>
-                                <td>10.</td>
-                                <td>Qc5</td>
-                                <td>Bg4</td>
-                            </tr>
-                            <tr>
-                                <td>11.</td>
-                                <td>Bg5</td>
-                                <td>Na4</td>
-                            </tr>
-                            <tr>
-                                <td>12.</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>13.</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>14.</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>15.</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>16.</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>17.</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>18.</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>19.</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>20.</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
+                        <tbody id="historyList"></tbody>
                     </table>
                 </section>
 
                 <section id="analysis">
                     <h2>Board Analysis</h2>
-                    <ol>
-                        <li>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, alias libero odio facilis aspernatur maxime numquam eius delectus? Facere voluptas reiciendis numquam molestiae assumenda ullam est illo voluptate, amet eos?</p>
-                        </li>
-                        <li>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium eius libero saepe distinctio repellat molestias ratione consequatur magnam! Officia a vel molestiae enim sed nobis repudiandae vero reprehenderit. Rem, minima!</p>
-                        </li>
-                        <li>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio praesentium voluptatibus quidem vel, odit, facere tenetur suscipit dolore reiciendis cum itaque, expedita ducimus magnam beatae dolores ratione corporis deleniti explicabo.</p>
-                        </li>
-                    </ol>
+                    <div id="evalBar">
+                        <div class="bar"></div>
+                        <div class="tick"></div>
+                        <div class="tick"></div>
+                        <div class="tick"></div>
+                        <div class="tick"></div>
+                        <div class="tick"></div>
+                        <div class="tick"></div>
+                        <div class="tick"></div>
+                        <div class="tick"></div>
+                        <div class="tick"></div>
+                    </div>
+                    <ol id="analysisList"></ol>
                 </section>
             </section>
         </main>
 
         <footer>
-            <p>&copy;2025 | SiteName | Corry McConnell Palmer</p>
+            <p>&copy;2025 | ChessIt | Corry McConnell Palmer</p>
         </footer>
     </div>
 </body>

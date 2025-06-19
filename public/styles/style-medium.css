@@ -1,0 +1,47 @@
+:root {
+    --space-size: clamp(10px, 8vw, 128px);
+}
+
+body:not(.not-home) main>section {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: calc(var(--space-size) * 9 + .66em) auto;
+}
+
+#board {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#history {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#history table tr *,
+#history table tr :first-child,
+#history thead th:first-of-type {
+    padding: revert;
+    text-align: revert;
+}
+
+#analysis {
+    grid-column: 1/-1;
+}
+
+#analysis>ol {
+    padding: .33em 3em;
+}
+
+#analysis details {
+    margin: 1rem .33em;
+}
+
+#analysis article {
+    padding: 1rem;
+}
+
+#analysis article p {
+    padding: 1rem;
+    text-align: justify;
+}
